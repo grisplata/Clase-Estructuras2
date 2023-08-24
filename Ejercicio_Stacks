@@ -1,0 +1,53 @@
+class libroStack {
+    constructor() {
+        this.stack = [];
+        this.count = 0;
+    }
+
+    push(element){
+        this.stack[this.count] = element;
+        this.count++;
+        return this.stack;
+    }
+
+    pop(){
+        this.count--;
+        const element = this.stack[this.count];
+        delete this.stack[this.count];
+        return element;
+    }
+
+    peek() {
+        return this.stack[this.stack.length - 1];
+    }
+
+    size() {
+        return this.stack.length;
+    }
+    
+    print() {
+        console.log(this.stack);
+    }
+}
+
+
+const stack = new libroStack();
+function pushLibro (nombre, isbn, autor, editorial){
+    const libro = {
+        nombre: nombre,
+        isbn: isbn,
+        autor: autor,
+        editorial: editorial
+    };
+    stack.push(libro);
+}
+
+pushLibro("El hoy", "665261", "Miguel", "CALI WOOD");
+pushLibro("El mañana", "65965", "Jaime", "MADE IN CALI");
+
+//console.log(stack.size());
+//stack.print();
+//console.log(stack.pop());
+//console.log(stack.peek());
+
+
